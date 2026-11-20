@@ -1,5 +1,5 @@
 
-# 8\. References {#10.-references}
+# 6\. References {#10.-references}
 
 \[1\]  EUCAIM Hyper-Ontology, Accessed via Zenodo, [https://doi.org/10.5281/zenodo.10777925](https://doi.org/10.5281/zenodo.10777925)
 

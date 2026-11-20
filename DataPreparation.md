@@ -1,4 +1,4 @@
-# 5. Data Preparation process
+# 3. Data Preparation process
 
 Data compliance with different tier levels can be performed progressively. For all three tiers, the process starts with the extraction and annotation (optional) of data, and is followed by various steps of de-identification and re-identification risk assessment, quality check and standardization. The details of the steps will be provided in the following sections, but the outline is the following:
 
@@ -82,7 +82,7 @@ For negative screening/control groups, **region and laterality are not mandatory
 
 _Values should preferably be provided at the imaging level using DICOM tags. If identical for all studies, they may be provided once at dataset level._
 
-## 5.1. Data preparation and related tools from the EUCAIM catalogue
+## 3.1. Data preparation and related tools from the EUCAIM catalogue
 
 For the purpose of data preparation, several tools have been selected and developed in EUCAIM. [Figure 7](DataPreparation.md#fig_datatools) shows the main tools selected for this phase.
 
@@ -200,7 +200,7 @@ You may use dedicated tools to assess the degree of compliance of your dataset t
 
 Tier 1 datasets can either be transferred to a reference node, or remain at your site. If your dataset remains on site, any data users interested in your dataset (as per the information found in the EUCAIM catalogue) will be put in direct contact with you. If you wish to transfer your dataset to a reference node, please refer to Section 6 of the Handbook for further information.
 
-## 5.3. Tiers 2 & 3 datasets
+## 3.3. Tiers 2 & 3 datasets
 
 ### **EUCAIM Common Data Model and Hyperontology**
 

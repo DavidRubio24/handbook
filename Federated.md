@@ -1,4 +1,4 @@
-# 7. Option 2: Setting up a Federated Node
+# 5. Option 2: Setting up a Federated Node
 
 This section describes the requirements and process of setting up a node, including the security and privacy considerations and the expected Service Level Agreement. It describes the requirements and setps to achieve Tier 1 to Tier 3 compliance. Additionally, [section 7.5](Federated.md#id-7.5.-setting-up-a-local-node-with-mini-node) describes the EUCAIM mini-node Software package, which provides an open-source solution for setting up a minimal node, capable of reachin Tier-2 compliance at the level of the services and Tier-3 compliance at the level of the data. Data Holders that have not set up their own node could find in this package a helpful software stack to deploy their own nodes.
 
@@ -40,17 +40,17 @@ A detailed description on the needs and components required for the local node c
 
 The processing capacity should be dimensioned to the amount of data available and it should be audited periodically.
 
-### **7.1.1. Security and privacy considerations**
+### **5.1.1. Security and privacy considerations**
 
 As stated in section 3.2, The DH who set up a local node have to demonstrate that the site implements good practices related to security and privacy preservation. Although they are not mandatory, a certification such as ISO/IEC 27001 and/or ISO/IEC 27701 would be appropriate to prove this capability. As a reference, the UPV reference node has a security and privacy document which is shared with the Data Holders in this link: [https://drive.google.com/file/d/1QK9pBuSwyMXNUdjIrNcd5khZb\_Wpzmag/view?usp=drive\_link](https://drive.google.com/file/d/1QK9pBuSwyMXNUdjIrNcd5khZb_Wpzmag/view?usp=drive_link).
 
 Ensure that the document includes the responsible persons and contacts in charge of the management of the site, the monitoring, backuping and security incidents. The site should implement periodic security audits. External security audits are also encouraged.
 
-### **7.1.2. Service Level Agreement**
+### **5.1.2. Service Level Agreement**
 
 The federated nodes have to guarantee that they commit enough resources to deal with the necessary level of service. This should be committed by signing a Service Level Agreement that declares the resources committed to the infrastructure, the Service support conditions, the committed Availability and Reliability and the contact points. As a basis, the UPV reference node has the Service Level Agreement publicly available in [https://eucaim-node.i3m.upv.es/dataset-service/web/sla.pdf](https://eucaim-node.i3m.upv.es/dataset-service/web/sla.pdf).
 
-## 7.2. Tier 1 compliance
+## 5.2. Tier 1 compliance
 
 The compliance at the Tier 1 level implies that the metadata of the datasets follow the EUCAIM DCAT-AP specification. In this case, the data holder can decide to register the datasets directly on the EUCAIM public catalogue or to set up its own federated registry. At this moment in time, we recommend the former, as the harvester will be released soon.
 
@@ -75,7 +75,7 @@ The registration of the dataset on the public catalogue has been described in se
 
 [Table 9](Federated.md#tab_tier1fednode): Set up a federated Catalogue
 
-## 7.3. Tier 2 compliance
+## 5.3. Tier 2 compliance
 
 The Tier 2 compliance implies that the data that is hosted at the federated node can be searched according to the searching variables defined in the CDM. At this point it is assumed that:
 
@@ -99,7 +99,7 @@ The steps that need to be developed are the following:
 
 Once you have the component developed and deployed, the integration with the federated search central services requires several steps, which are detailed next.
 
-### **7.3.1. Node Registration and Deployment**
+### **5.3.1. Node Registration and Deployment**
 
 We will take the CHAIMELEON node as example.  
 All required files to deploy the federated search components in the CHAIMELEON node over a Kubernetes cluster are available in:  
@@ -205,7 +205,7 @@ Once you have your metadata mapping, your Mediator component operational, the Ro
 
 All communications are performed using encrypted protocols (TLS 1.3).
 
-## 7.4. Tier 3 compliance
+## 5.4. Tier 3 compliance
 
 The following is the usual “step-by-step” procedure to deploy FEM-client, the component responsible for connecting a node to the EUCAIM’s federated network.
 
@@ -231,7 +231,7 @@ The following is the usual “step-by-step” procedure to deploy FEM-client, th
 4. **Final Setup & Testing**
    * After setup, we’ll run some tests to verify: 1) Network connectivity; 2) FEM-client’s ability to access local infrastructure and trigger container executions; and 3) materialization of data for EUCAIM.
 
-## 7.5. Setting up a local node with Mini-node
+## 5.5. Setting up a local node with Mini-node
 
 Data holders that do not have a local node could easily deploy a minimal node capable of providing access to data to data users and link to the EUCAIM federation by means of the EUCAIM mini node ([https://github.com/EUCAIM/mini-node](https://github.com/EUCAIM/mini-node)). The mini node currently features:
 
@@ -243,7 +243,7 @@ Data holders that do not have a local node could easily deploy a minimal node ca
 
 The mini node will be extended with the capability of running batch jobs and the materialisator component to integrate with the Federated Processing.
 
-### 7.5.1. Requirements
+### 5.5.1. Requirements
 
 Mini node works on top of a Kubernetes cluster and users scripts in Python. If the expected workload is limited (in the order o5 5 concurrent users as a maxium), the whole node can be setup in a single computer, following the Tier 2/3 hardware requirements described at the beginning of the section. Linux is preferrable, but the setup of Kubernetes provides a virtualization layer that could overcome this requirement. With respect to the Kubernetes release, despite that the mini node manifests could work with any compatible distribution, we encourage the usage of (minikube)\[https://minikube.sigs.k8s.io/docs/]. The installation of minikube is well described in the documentation available in the previous link.
 
@@ -257,7 +257,7 @@ Additionally, the host computer must have:
 
 The ([https://github.com/EUCAIM/mini-node](https://github.com/EUCAIM/mini-node)) repository contains the scripts and configuration files to automate the deployment of a mini EUCAIM node using Kubernetes and Minikube. It includes automated installation for Keycloak, Guacamole, and the Dataset Service, with all secrets and configuration injected from a single YAML file.
 
-### 7.5.2. Installing the prerequisites
+### 5.5.2. Installing the prerequisites
 
 The following tools must be installed before running the installation:
 
@@ -332,7 +332,7 @@ alias 'helm=minikube helm --`
 
 Newer versions of minikube do not support `helm` as an internal command. In this case, `helm` can be installed directly in the computer (see https://helm.sh/docs/intro/install/ ).
 
-### 7.5.3. Installing the software
+### 5.5.3. Installing the software
 
 The installation script (`install.py`) automates the deployment of:
 

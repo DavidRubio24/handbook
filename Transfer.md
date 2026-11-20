@@ -1,6 +1,6 @@
-# 6. Option 1: Transfer to Reference Node
+# 4. Option 1: Transfer to Reference Node
 
-## 6.1. Reference Nodes
+## 4.1. Reference Nodes
 
 EUCAIM has set up two reference nodes to host data transferred from the data holders. These two reference nodes are complementary and use compatible but different technologies.
 
@@ -10,7 +10,7 @@ EUCAIM has set up two reference nodes to host data transferred from the data hol
 Details on the features supported by each Reference node are provided in [D5.6](https://cancerimage.eu/wp-content/uploads/2026/02/D5.6.-Minimum-Data-Federation-and-Interoperability-Framework.pdf), section 4.3.3. 
 All communications are performed using encrypted protocols (TLS 1.3).
 
-## 6.2. Transferring data to the nodes
+## 4.2. Transferring data to the nodes
 
 The workflow for uploading the datasets is presented in [Figure 10](Transfer.md#fig_dataing1) and described in the next sections.
 
@@ -18,7 +18,7 @@ The workflow for uploading the datasets is presented in [Figure 10](Transfer.md#
 
 ![Figure 10. Steps in the process of transferring data to the nodes. Steps in purple are covered in section 5. Steps in blue (5-10) are described in the next sections.](.gitbook/assets/image9.png)
 
-### 6.2.1. Initial steps
+### 4.2.1. Initial steps
 
 **Steps 1 to 4** are described in the previous chapter [5. Data Preparation process](DataPreparation.md).
 But in case of HealthRI Reference Node the anonymisation of the imaging data will be done by CTP, the upload tool, in step 8.
@@ -46,7 +46,7 @@ The next steps depends on the reference node used to transfer
 
 Regardless of the reference node used to transfer please don't forget to publish the datasets at the end in the Federated Catalogue: the process is described in the last section [6.3. Publishing datasets in the Federated Catalogue](#63-publishing-datasets-in-the-federated-catalogue).
 
-### 6.2.2. Data Transfer to the UPV reference node using QP-Insights
+### 4.2.2. Data Transfer to the UPV reference node using QP-Insights
 QP-Insigths supports the ingestion of DICOM Images and associated clinical data to the UPV reference node using two pathways: 
 
 -	**Batch upload via QP-Insights Uploader App**. Recommended for retrospective or large-scale repositories as this method enables the simultaneous transfer of multiple studies.    
@@ -54,7 +54,7 @@ QP-Insigths supports the ingestion of DICOM Images and associated clinical data 
 
 **Important**: Before uploading any data, an administrator must **manually create a new project**, if you don't see your project go back to the step 7. 
 
-#### 6.2.2.1. Batch upload via QP-Insights Uploader (Desktop App)
+#### 4.2.2.1. Batch upload via QP-Insights Uploader (Desktop App)
 The [QP-Insights Uploader](https://bio.tools/qp-insights_uploader) is specially designed to upload many studies in batch. It is recommended to upload a small batch first in order to check that the uploaded data is the expected, and if everything is ok, then upload the rest. 
 
 Once the application is executed, you will have to log in using your **UPV reference node credentials**. If you previously accessed the platform using LS-AAI, you may need to manually set up a password. You can do this under:
@@ -100,7 +100,7 @@ Once uploaded, the exams can be accessed through the QP-Insights platform at: ht
 ![Figure 6.6. (Left) Uploaded subjects view in the QP-Insights platform. (Right) Integrated DICOM Viewer.](figures/image6-6.avif)
 
 
-#### 6.2.2.2. Case-by-case upload via QP-Insights Web Interface
+#### 4.2.2.2. Case-by-case upload via QP-Insights Web Interface
 
 To upload data using the web interface (no installation required), access https://qpinsights.eucaim-node.i3m.upv.es/cases. 
 
@@ -130,12 +130,12 @@ If your project includes an electronic Case Report Form (eCRF), you can fill it 
 Additionally, the QP-Insights application includes a set of DICOMWeb standards-based functionalities for working with DICOM files via API.
 
 
-#### 6.2.2.3. Creating the dataset
+#### 4.2.2.3. Creating the dataset
 Datasets uploaded to UPV reference node won’t be immediately published, it is necessary first to create a dedicated dataset from the data that was uploaded to the platform. QP-Insights implements a dedicated workflow to create datasets from the data previously uploaded to the platform. The user with the role of *dataset manager* will be able to select subjects or cases of a project. When one o more cases are selected, the button "Export dataset" appears in the bottom right corner to allow the dataset creation. In the next page, the user will be asked for a name, description and purpose, along with the dataset type and method as shown in Figure 6.12. The dataset creation will later be reflected in the dataset explorer. 
 
 ![Figure 6.12. (Left) Manually select the cases that will be part of a dataset. (Right) Complete dataset details and configuration before exporting it.](figures/image6-12.avif)
 
-#### 6.2.2.4. Upload metadata
+#### 4.2.2.4. Upload metadata
 The description of this user action refers to the release of a dataset as a discoverable one. This implies two steps:
 
 1. **Release the dataset** in the catalogue of the node. To do it you have to access the [dataset explorer](https://eucaim-node.i3m.upv.es/dataset-service), look for the dataset (initially with the flag "draft", only visible to you) and enter the details page (Figure 6.13). Here verify that the draft of dataset is correct, review all the properties, ensure all of them are filled in, including the contact information and license. Optionally you can even create a Virtual Research Environment if you have the "datascientist" role to explore and check de contents (detailed in [section 4.8 of the user guide](https://eucaim.gitbook.io/enduserguide/4-userguideforresearchers#id-4.8.-reference-node-at-upv)). Then you can "release" the dataset, there is an option for that in the "Actions" button.
@@ -144,17 +144,17 @@ The description of this user action refers to the release of a dataset as a disc
 
 2. **Register the dataset in the EUCAIM's catalogue**. This final step is described in the last section [6.3. Publishing datasets in the Federated Catalogue](#63-publishing-datasets-in-the-federated-catalogue).
 
-#### 6.2.2.5. Dataset tracing (additional note)
+#### 4.2.2.5. Dataset tracing (additional note)
 The operations of creation, access and batch processing to a specific dataset are registered on a Blockchain Database. This database is operated by the Tracer Service in the UPV reference node, logging any action performed on the datasets hosted.  
 The information on the access history is available through the dataset details page in the UPV reference node [dataset explorer](https://eucaim-node.i3m.upv.es/dataset-service).
 
 *Info for developers*: The Tracer Service has a REST API for any other service to register additional actions.  
 The list of traces can be queried for a specific dataset using the GET operation on the endpoint [https://eucaim-node.i3m.upv.es/tracer-service/tracer/api/v1/traces?datasetId=dataset-id](https://eucaim-node.i3m.upv.es/tracer-service/tracer/api/v1/traces?datasetId=dataset-id), provided that the user has the proper credentials.
 
-### 6.2.3. Data Transfer to the HealthRI reference node
+### 4.2.3. Data Transfer to the HealthRI reference node
 Please make sure you fulfill the requisites before continuing with uploading your data to the [Health-RI XNAT](https://xnat.health-ri.nl)
 
-#### 6.2.3.1. Uploading Dicom data
+#### 4.2.3.1. Uploading Dicom data
 
 ##### Data requirements
 Please make sure the DICOM files are de-identified and contain properly formatted headers.
@@ -171,7 +171,7 @@ At a minimum, the following headers need to be present:
 For uploading dicom data using CTP is recommended. Please use [🔗 this guide](https://gitlab.com/radiology/infrastructure/data-curation-tools/ctp-standalone/-/raw/main/Manuals/EUCAIM%20XNAT%20Central%20Repository.pdf) to upload your data.
 
 
-#### 6.2.3.2. Uploading Nifti data
+#### 4.2.3.2. Uploading Nifti data
 
 ##### Data requirements
 When uploading nifti's you need to supply required dicom headers in json format. Follow the [🔗 DICOM specifications for formatting this json](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_F.html) file. [🔗 This is an example](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_F.4.html) on how such a file should be formatted.
@@ -184,10 +184,10 @@ Here is an example how to upload the dicom json files: https://gitlab.com/radiol
 
 See detailed instructions on how to use the Clinical Trial Processor (CTP) in this [guide](https://gitlab.com/radiology/infrastructure/data-curation-tools/ctp-standalone/-/raw/main/Manuals/EUCAIM%20XNAT%20Central%20Repository.pdf).
 
-#### 6.2.3.3. Uploading the clinical data
+#### 4.2.3.3. Uploading the clinical data
 
 Once medical imaging data is uploaded, you can proceed with the clinical data. [XNATpy](https://xnat.readthedocs.io/en/latest/) can be used to upload the CSV or JSON to XNAT.
 
-#### 6.2.3.4. Create and Publish the Dataset
+#### 4.2.3.4. Create and Publish the Dataset
 
 The project in XNAT should be set to protected (or public) to make the metadata visible.
