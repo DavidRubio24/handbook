@@ -10,13 +10,13 @@ The opinions stated in this report reflect the opinions of the authors and not t
 
 All intellectual property rights are owned by the consortium of EUCAIM under terms stated in their Consortium Agreement and are protected by the applicable laws. Reproduction is not authorised without prior written agreement. The commercial use of any information contained in this document may require a licence from the owner of the information.
 
-**Project acronym:** EUCAIM
+**Project acronym:** ABIGAIL4D
 
-**Grant Agreement:** 101100633
+**Grant Agreement:** 101307206
 
-**Call identifier:** DIGITAL-2022-CLOUD-AI-02
+**Call identifier:** HORIZON-EIC-2025-PATHFINDERCHALLENGES-01
 
-**Data Holders EUCAIM Federation Handbook**
+**Data Holders ABIGAIL4D Federation Handbook**
 
 **Version: 1.0**
 
@@ -24,23 +24,7 @@ Table of contents
 
 [**1. Introduction**](Introduction.md)
 
-[**2. Governance**](Governance.md)
-
-&#x20;   [2.1. Data governance](Governance.md#id-2.1.-data-governance)
-
-[**3. Onboarding Process**](Onboarding.md)
-
-&#x20;   [3.1. Initial requirements and commitments](Onboarding.md#id-3.1.-initial-requirements-and-commitments)
-
-&#x20;   [3.2. Legal documents](Onboarding.md#id-3.2.-legal-documents)
-
-[**4. Support and communication**](Support.md)
-
-&#x20;   [4.1. Engagement Team](Support.md#id-4.1.-engagement-team)
-
-&#x20;   [4.2. Helpdesk](Support.md#id-4.2.-helpdesk)
-
-&#x20;   [4.3. EUCAIM training platform: Overview of courses and access](Support.md#id-4.3.-eucaim-training-platform-overview-of-courses-and-access)
+[**2. Onboarding Process**](Onboarding.md)
 
 [**5. Data Preparation process**](DataPreparation.md)
 

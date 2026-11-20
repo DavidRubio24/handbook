@@ -191,22 +191,3 @@ Once medical imaging data is uploaded, you can proceed with the clinical data. [
 #### 6.2.3.4. Create and Publish the Dataset
 
 The project in XNAT should be set to protected (or public) to make the metadata visible.
-
-
-## 6.3. Publishing datasets in the Federated Catalogue
-
-This is required for all datasets, including those in Tier 1. 
-The process of registration will be automated but it is manual for the current time being.
-
-The dataset schema can be downloaded from this [link](https://github.com/EUCAIM/eucaim_dcat_ap/blob/main/releases/v2.0/EUCAIM_HealthDCAT_AP_Metadata_Template_v2.0.xlsx). 
-In case of doubts with the terminology, use textual descriptions. It is very important that the Identifier matches the id that the federated search will provide for this dataset, as it is the only field that cannot be changed afterwards. For example, in Figure 6.13 the id would be `c75d0998-85db-4c94-9d2c-346961f0c6f7`.
-
-Once you have filled in all the information, create a ticket on the [helpdesk](https://help.cancerimage.eu/) under the group "catalogue", providing the spreadsheet file with the metadata information. The helpdesk team will contact you back informing if the dataset has been properly registered or requesting more information. 
-
-Once it is created, please access the registry in the catalogue, locate your dataset and verify the details: 
-[https://catalogue.eucaim.cancerimage.eu/](https://catalogue.eucaim.cancerimage.eu/).  
-
-**Final steps in UPV reference node**
- - The flag "Published" will be added to the dataset in the catalogue of the node and so it will be included in the [EUCAIM UPV Reference node community in Zenodo](https://zenodo.org/communities/eucaim-upv-node-datasets/records?q=&l=list&p=1&s=10&sort=newest) acquiring a DOI.  
- - The tag "eucaim-indexed" will be added to the dataset to make it discoverable through the Federated Search (required for Tier 2 and above).
-
